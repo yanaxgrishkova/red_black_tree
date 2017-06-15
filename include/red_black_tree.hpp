@@ -231,7 +231,7 @@ void RedBlackTree<T>::print(const Node<T>* tempNode, int level)const
 	}
 
 template <typename T>
-Node<T>* RedBlackTree::findElement(const T& value) const
+Node<T>* RedBlackTree<T>::findElement(const T& value) const
 {
 	Node<T>* currNode = root;
 	while (currNode != NIL)
