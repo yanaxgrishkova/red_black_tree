@@ -49,3 +49,18 @@ SCENARIO("insert3")
   REQUIRE(rbt.findElement(4) != 0);
   REQUIRE(rbt.findElement(5) != 0);
 }
+
+SCENARIO ("insert4")
+{
+  RedBlackTree<int> rbt;
+  rbt.insert(3);
+  rbt.insert(1);
+  rbt.insert(2);
+  REQUIRE(rbt._root() == rbt.findElement(2));
+  REQUIRE(rbt._color(2) == 1);
+  REQUIRE(rbt._color(1) == 0);
+  REQUIRE(rbt._color(3) == 0);
+  REQUIRE(rbt.findElement(1) != 0);
+  REQUIRE(rbt.findElement(2) != 0);
+  REQUIRE(rbt.findElement(3) != 0);
+}
