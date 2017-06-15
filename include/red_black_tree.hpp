@@ -4,7 +4,6 @@
 const bool BLACK = 1;
 const bool RED = 0;
 
-
 template<typename T> 
 struct Node
 {
@@ -13,6 +12,15 @@ struct Node
 	Node* leftNode;
 	Node* rightNode;
 	Node* parNode;
+	
+	Node(T value)
+	{
+		this->value = value;
+		color = RED;
+		leftNode = nullptr;
+		rightNode = nullptr;
+		parNode = nullptr;		
+	}
 };
 
 template<typename T> 
@@ -25,11 +33,11 @@ public:
 	RedBlackTree();
 	bool _color(const T& value) const;
 	Node<T>* _root() const;
-	Node<T>* _NIL()const;
+	Node<T>* _NIL() const;
 	void left_rotate(Node<T>* currNode);
 	void right_rotate(Node<T>* currNode);
 	void insertFix(Node<T>* currNode);
-	void insert(const T& added);
+	void insert(const T& value);
 	void print(const Node<T>* tempNode, int level) const;
 	Node<T>* findElement(const T& value) const;
 };
@@ -169,14 +177,14 @@ void RedBlackTree<T>::insertFix(Node<T>* currNode)
 }
 
 template <typename T>
-void RedBlackTree<T>::insert(const T& added)
+void RedBlackTree<T>::insert(const T& value)
 {
-	if (findElement(added))
+	if (findElement(value))
 	{
 		throw std::logic_error("This value is already added!\n");
 	}
 	Node<T>* daughter = new Node<T>;
-	daughter->value = added;
+	daughter->value = value;
 	daughter->color = RED;
 	daughter->leftNode = daughter->rightNode = daughter->parNode = NIL;
 	Node<T>* parNode = NIL;
@@ -194,7 +202,7 @@ void RedBlackTree<T>::insert(const T& added)
 			return;
 
 		parNode = tempNode;
-		if (added < tempNode->value)
+		if (value < tempNode->value)
 			tempNode= tempNode->leftNode;
 		else
 			tempNode= tempNode->rightNode;
