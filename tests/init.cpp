@@ -20,11 +20,11 @@ SCENARIO("insert2", "[init]")
   rbt.insert(2);
   rbt.insert(3);
   rbt.insert(4);
-  REQUIRE(tree._root() == tree.findElement(3));
-  REQUIRE(tree._color(3) == 1);
-  REQUIRE(tree._color(2) == 0);
-  REQUIRE(tree._color(4) == 0);
-  REQUIRE(tree.findElement(2) != 0);
-  REQUIRE(tree.findElement(3) != 0);
-  REQUIRE(tree.findElement(4) != 0);
+  REQUIRE(rbt._root() == rbt.findElement(3));
+  REQUIRE(rbt._color(3) == 1);
+  REQUIRE(rbt._color(2) == 0);
+  REQUIRE(rbt._color(4) == 0);
+  REQUIRE(rbt.findElement(2) != 0);
+  REQUIRE(rbt.findElement(3) != 0);
+  REQUIRE(rbt.findElement(4) != 0);
 }
