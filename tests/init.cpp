@@ -3,6 +3,6 @@
 
 SCENARIO("default constructor") 
 {
-	BinarySearchTree<int> rbt;
+	RedBlackTree<int> rbt;
 	REQUIRE(rbt._root() == rbt._NIL());
 }
