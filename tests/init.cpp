@@ -37,7 +37,7 @@ SCENARIO("insert3")
   rbt.insert(3);
   rbt.insert(4);
   rbt.insert(5);
-  REQUIRE(rbt._root() == rbt.search(2));
+  REQUIRE(rbt._root() == rbt.findElement(2));
   REQUIRE(rbt._color(2) == 1);
   REQUIRE(rbt._color(1) == 1);
   REQUIRE(rbt._color(4) == 1);
