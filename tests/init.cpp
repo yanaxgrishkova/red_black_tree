@@ -28,3 +28,24 @@ SCENARIO("insert2", "[init]")
   REQUIRE(rbt.findElement(3) != 0);
   REQUIRE(rbt.findElement(4) != 0);
 }
+
+SCENARIO("insert3")
+{
+  RedBlackTree<int> rbt;
+  rbt.insert(1);
+  rbt.insert(2);
+  rbt.insert(3);
+  rbt.insert(4);
+  rbt.insert(5);
+  REQUIRE(rbt._root() == rbt.search(2));
+  REQUIRE(rbt._color(2) == 1);
+  REQUIRE(rbt._color(1) == 1);
+  REQUIRE(rbt._color(4) == 1);
+  REQUIRE(rbt._color(3) == 0);
+  REQUIRE(rbt._color(5) == 0);
+  REQUIRE(rbt.findElement(1) != 0);
+  REQUIRE(rbt.findElement(2) != 0);
+  REQUIRE(rbt.findElement(3) != 0);
+  REQUIRE(rbt.findElement(4) != 0);
+  REQUIRE(rbt.findElement(5) != 0);
+}
