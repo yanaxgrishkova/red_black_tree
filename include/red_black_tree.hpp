@@ -45,7 +45,7 @@ RedBlackTree<T>::RedBlackTree()
 }
 
 template <typename T> 
-RedBlackTree::~RedBlackTree()
+RedBlackTree<T>::~RedBlackTree()
 {
 	destroyTree(root);
 	delete NIL;
