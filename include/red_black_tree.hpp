@@ -52,7 +52,7 @@ RedBlackTree::~RedBlackTree()
 }
 
 template <typename T>
-void BinarySearchTree<T>::destroyTree(Node<T>* node)
+void RedBlackTree<T>::destroyTree(Node<T>* node)
 {
 	if (!node)
 		return;
