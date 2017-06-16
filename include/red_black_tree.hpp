@@ -22,6 +22,7 @@ private:
 	Node<T>* NIL;
 public:
 	RedBlackTree();
+	~RedBlackTree();
 	bool _color(const T& value) const;
 	Node<T>* _root() const;
 	Node<T>* _NIL() const;
@@ -29,6 +30,7 @@ public:
 	void right_rotate(Node<T>* currNode);
 	void insertFix(Node<T>* currNode);
 	void insert(const T& value);
+	void destroyTree(Node<T>* node);
 	void print(const Node<T>* tempNode, int level) const;
 	Node<T>* findElement(const T& value) const;
 };
@@ -40,6 +42,28 @@ RedBlackTree<T>::RedBlackTree()
 	NIL->leftNode = NIL->parNode = NIL->rightNode = nullptr;
 	NIL->color = BLACK;
 	root = NIL;
+}
+
+template <typename T> 
+RedBlackTree::~RedBlackTree()
+{
+	destroyTree(root);
+	delete NIL;
+}
+
+template <typename T>
+void BinarySearchTree<T>::destroyTree(Node<T>* node)
+{
+	if (!node)
+		return;
+	
+	while (node->leftNode != NIL)
+		destroyTree(node->leftNode);
+
+	while (node->rightNode != NIL)
+		destroyTree(node->rightNode);
+
+	delete node;
 }
 
 template <typename T>
