@@ -1,8 +1,8 @@
 #include <iostream>
 #include <stdexcept>
 
-#define BLACK 1;
-#define RED 0;
+const bool BLACK 1;
+conts bool RED 0;
 
 template<typename T> 
 struct Node
