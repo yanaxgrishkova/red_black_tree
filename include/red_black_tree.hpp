@@ -2,7 +2,7 @@
 #include <stdexcept>
 
 const bool BLACK 1;
-conts bool RED 0;
+const bool RED 0;
 
 template<typename T> 
 struct Node
