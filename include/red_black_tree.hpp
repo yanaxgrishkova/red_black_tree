@@ -44,28 +44,6 @@ RedBlackTree<T>::RedBlackTree()
 	root = NIL;
 }
 
-template <typename T> 
-RedBlackTree<T>::~RedBlackTree()
-{
-	destroyTree(root);
-	delete NIL;
-}
-
-template <typename T>
-void RedBlackTree<T>::destroyTree(Node<T>* node)
-{
-	if (!node)
-		return;
-	
-	while (node->leftNode != NIL)
-		destroyTree(node->leftNode);
-
-	while (node->rightNode != NIL)
-		destroyTree(node->rightNode);
-
-	delete node;
-}
-
 template <typename T>
 bool RedBlackTree<T>::_color(const T& value) const
 {
