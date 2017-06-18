@@ -22,7 +22,6 @@ private:
 	Node<T>* NIL;
 public:
 	RedBlackTree();
-	~RedBlackTree();
 	bool _color(const T& value) const;
 	Node<T>* _root() const;
 	Node<T>* _NIL() const;
@@ -30,7 +29,6 @@ public:
 	void right_rotate(Node<T>* currNode);
 	void insertFix(Node<T>* currNode);
 	void insert(const T& value);
-	void destroyTree(Node<T>* node);
 	void print(const Node<T>* tempNode, int level) const;
 	Node<T>* findElement(const T& value) const;
 };
